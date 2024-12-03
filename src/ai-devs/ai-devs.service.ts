@@ -12,7 +12,7 @@ export class AiDevsService {
   async start() {
     const body = {
       apikey: process.env.AGENTS_API_KEY,
-      answer: 'https://842b-178-235-174-4.ngrok-free.app/api/ai-devs/common',
+      answer: process.env.HOST_URL + '/api/ai-devs/common',
       task: 'webhook',
     };
     const response = await fetch('https://centrala.ag3nts.org/report', {
