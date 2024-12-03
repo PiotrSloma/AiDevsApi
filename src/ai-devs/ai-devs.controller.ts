@@ -5,8 +5,13 @@ import { AiDevsService } from './ai-devs.service';
 export class AiDevsController {
   constructor(private readonly aiDevsService: AiDevsService) {}
 
-  @Post('chat')
-  async chat(@Body() body: { prompt: string }) {
-    return this.aiDevsService.generateCompletion(body.prompt);
+  @Post('common')
+  async common(@Body() body: { instruction: string }) {
+    console.log(body);
+    return this.aiDevsService.common(body.instruction);
+  }
+  @Post('start')
+  async start() {
+    return this.aiDevsService.start();
   }
 }

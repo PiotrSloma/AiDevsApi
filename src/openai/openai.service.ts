@@ -10,7 +10,7 @@ export class OpenaiService {
 
   async generateCompletion(
     prompt: string,
-    systemPrompt: string,
+    systemPrompt = 'You are a helpful assistant Alice.',
     model = 'gpt-4o',
     options?: any,
   ) {
